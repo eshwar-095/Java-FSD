@@ -38,6 +38,11 @@ public class SalaryController {
 		return service.getAllInfo();	
 	}
 	
+	@GetMapping("/{id}")
+	public Salary getById(@PathVariable long id) {
+		return service.getSalaryById(id);
+	}
+	
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<Object> updateInfo(@PathVariable Long id,@RequestBody Salary newInfo){
@@ -69,7 +74,5 @@ public class SalaryController {
 	@PutMapping("emp/{employeeid}")
 	public Salary updateInfoByEmpId(@PathVariable String employeeid,@RequestBody Salary newInfo){
 		return service.updateSalaryByEmpId(employeeid, newInfo);
-		
-
 	}*/
 }
