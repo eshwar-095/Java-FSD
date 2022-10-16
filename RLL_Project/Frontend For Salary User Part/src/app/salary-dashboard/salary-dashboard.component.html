@@ -1,0 +1,32 @@
+<div id="content" #content>
+            <hr>
+            <h1>Salary Dashboard</h1>
+            <hr>
+            
+            <table class="table table-sm table-stripped">
+                
+                <thead>
+                    <tr class="bg-info text-white text-center">
+                            
+                            <th>NAME</th>
+                            <th>MONTH</th>
+                            <th>YEAR</th>
+                            <th>SALARY</th>
+                            <th>ACTION</th>      
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of salaryInfo" class="text-center">
+                            
+                            <td>{{row.name}}</td>
+                            <td>{{row.month}}</td>
+                            <td>{{row.year}}</td>
+                            <td>{{row.salary}}</td>
+                        
+                        <td><button (click)="makePdf()">Download</button></td>  
+                    </tr>
+                </tbody>
+                
+            </table>
+        </div>        
+
