@@ -24,6 +24,7 @@ public class SalaryService {
 	public Salary updateSalaryInfo(Long id, Salary newinfo) {
 		if(repo.findById(id).isPresent()) {
 			Salary oldinfo = repo.findById(id).get();
+			
 			oldinfo.setSalary(newinfo.getSalary());
 			return repo.save(oldinfo);
 		}else {

@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginService } from './login.service';
 import { LoginComponent } from './login/login.component';
 import { SalaryDashboardComponent } from './salary-dashboard/salary-dashboard.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SalaryDashboardComponent
+    SalaryDashboardComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

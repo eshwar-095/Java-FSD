@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 import { LoginService } from '../login.service';
 import { Salary } from './salary';
 import { SalaryService } from './salary.service';
+import autoTable from 'jspdf-autotable';
 
 @Component({
   selector: 'app-salary-dashboard',
@@ -31,7 +32,7 @@ export class SalaryDashboardComponent implements OnInit {
   }
 
   getInfo(employeeid:String):void{
-    this.salaryService.getAllInfo(employeeid).subscribe(
+    this.salaryService.getInfoByEmpId(employeeid).subscribe(
       (res:Salary[])=>{
       this.salaryInfo=res;
     },
@@ -45,12 +46,14 @@ export class SalaryDashboardComponent implements OnInit {
 
    makePdf(){
     let pdf= new jsPDF('p','pt','a4');
-    
+    /*
     pdf.html(this.el.nativeElement,{
       callback:(pdf)=>{
         pdf.save("SalarySlip.pdf")
       }
-    })
+    })*/
+    autoTable(pdf,{html:'#content'})
+    pdf.save('table.pdf')
    }
 
 }

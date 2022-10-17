@@ -1,9 +1,9 @@
-<div id="content" #content>
+<div class="jumbotron">
             <hr>
             <h1>Salary Dashboard</h1>
             <hr>
             
-            <table class="table table-sm table-stripped">
+            <table class="table table-sm table-stripped" id="content">
                 
                 <thead>
                     <tr class="bg-info text-white text-center">
@@ -22,11 +22,12 @@
                             <td>{{row.month}}</td>
                             <td>{{row.year}}</td>
                             <td>{{row.salary}}</td>
+                            <td><button (click)="makePdf()">Download</button></td>
                         
-                        <td><button (click)="makePdf()">Download</button></td>  
                     </tr>
+                      
                 </tbody>
-                
             </table>
         </div>        
 
+        
