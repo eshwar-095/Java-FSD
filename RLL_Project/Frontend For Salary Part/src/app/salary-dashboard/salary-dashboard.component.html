@@ -3,16 +3,16 @@
             <h1>Salary Dashboard</h1>
             <hr>
             
-            <table class="table table-sm table-stripped" id="content">
+            <table class="table table-sm table-stripped" id="content"  >
                 
                 <thead>
-                    <tr class="bg-info text-white text-center">
+                    <tr  class="bg-info text-white text-center">
                             
                             <th>NAME</th>
                             <th>MONTH</th>
                             <th>YEAR</th>
                             <th>SALARY</th>
-                            <th>ACTION</th>      
+                                 
                     </tr>
                 </thead>
                 <tbody>
@@ -22,12 +22,16 @@
                             <td>{{row.month}}</td>
                             <td>{{row.year}}</td>
                             <td>{{row.salary}}</td>
-                            <td><button (click)="makePdf()">Download</button></td>
-                        
                     </tr>
-                      
+                    
                 </tbody>
             </table>
-        </div>        
+            <div class="flex-box">
+                <button class="btn btn-info mx-2" (click)="makePdf()">Download</button>
+            </div>
+            
+        </div>   
+        
+        
 
         
